@@ -1,11 +1,9 @@
-var merge = require('lodash.merge')
-
-var getAssetKind = require('./lib/getAssetKind')
-var isHMRUpdate = require('./lib/isHMRUpdate')
-var isSourceMap = require('./lib/isSourceMap')
-
-var createQueuedWriter = require('./lib/output/createQueuedWriter')
-var createOutputWriter = require('./lib/output/createOutputWriter')
+const merge = require('lodash.merge')
+const {getAssetKind} = require('./src/utils')
+const isHMRUpdate = require('./src/isHMRUpdate')
+const isSourceMap = require('./src/isSourceMap')
+const createQueuedWriter = require('./src/createQueuedWriter')
+const createOutputWriter = require('./src/createOutputWriter')
 
 function AssetsWebpackPlugin (options) {
   this.options = merge({}, {
@@ -62,7 +60,7 @@ AssetsWebpackPlugin.prototype = {
             return typeMap
           }
 
-          var typeName = getAssetKind(options, asset)
+          var typeName = getAssetKind(asset)
           typeMap[typeName] = assetPath + asset
 
           return typeMap
