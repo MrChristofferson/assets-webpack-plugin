@@ -14,7 +14,7 @@ module.exports = function (options) {
   }
 
   return function writeOutput (newAssets, next) {
-    // if potions.update is false and we're on the first pass of a (possibly) multicompiler
+    // if options.update is false and we're on the first pass of a (possibly) multicompiler
     var overwrite = !update && firstRun
 
     mkdirp(options.path, function (err) {
