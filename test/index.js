@@ -4,8 +4,6 @@ import fs from 'fs'
 import {dirSync as tmpDir} from 'tmp'
 import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import rmRf from 'rimraf'
-import {isRegExp, isString} from 'lodash'
 import mkdirp from 'mkdirp'
 import AssetsWebpackPlugin from '..'
 
